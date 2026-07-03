@@ -1,0 +1,25 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="420" rx="32" fill="url(#bg)"/>
+  <circle cx="950" cy="110" r="120" fill="white" fill-opacity="0.12"/>
+  <circle cx="255" cy="330" r="160" fill="white" fill-opacity="0.08"/>
+  <rect x="140" y="110" width="360" height="200" rx="26" fill="#FFFFFF" fill-opacity="0.95"/>
+  <rect x="220" y="150" width="120" height="80" rx="20" fill="#2563EB"/>
+  <circle cx="280" cy="190" r="26" fill="#FFFFFF"/>
+  <rect x="360" y="170" width="90" height="14" rx="7" fill="#CBD5E1"/>
+  <rect x="360" y="202" width="70" height="12" rx="6" fill="#E2E8F0"/>
+  <rect x="360" y="230" width="100" height="12" rx="6" fill="#E2E8F0"/>
+  <rect x="590" y="120" width="330" height="180" rx="28" fill="#0F172A" fill-opacity="0.8"/>
+  <path d="M675 228C675 196.026 700.026 171 732 171H760C791.974 171 817 196.026 817 228V240H675V228Z" fill="#60A5FA"/>
+  <rect x="694" y="180" width="90" height="44" rx="16" fill="#F8FAFC"/>
+  <circle cx="739" cy="202" r="18" fill="#2563EB"/>
+  <path d="M732 150C732 138.954 740.954 130 752 130H769C780.046 130 789 138.954 789 150V170H732V150Z" fill="#F8FAFC"/>
+  <rect x="670" y="248" width="140" height="18" rx="9" fill="#93C5FD"/>
+  <text x="140" y="360" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">Agentic AI Assistant</text>
+  <text x="140" y="392" fill="#DBEAFE" font-family="Segoe UI, Arial, sans-serif" font-size="22">Search • Weather • Intelligent Conversations</text>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="40" x2="1080" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D4ED8"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+</svg>
