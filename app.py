@@ -32,11 +32,100 @@ TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 st.set_page_config(
     page_title="Agentic AI Assistant",
     page_icon="🤖",
-    layout="centered"
+    layout="wide"
 )
 
-st.title("🤖 Agentic AI Assistant")
-st.markdown("Search + Weather AI Agent using LangChain")
+st.markdown(
+    """
+    <style>
+    .main { padding-top: 0.5rem; }
+    .hero-card {
+        background: linear-gradient(135deg, #0f172a, #1d4ed8);
+        padding: 1.6rem 1.8rem;
+        border-radius: 18px;
+        color: white;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.2);
+        margin-bottom: 1rem;
+    }
+    .hero-card h1 {
+        margin-bottom: 0.2rem;
+        font-size: 2rem;
+    }
+    .hero-card p {
+        font-size: 1rem;
+        opacity: 0.95;
+    }
+    .info-card {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 1rem 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .stTextInput > div > div > input {
+        border-radius: 12px;
+        padding: 0.7rem 0.8rem;
+    }
+    .stButton > button {
+        border-radius: 999px;
+        padding: 0.55rem 1.2rem;
+        font-weight: 600;
+        background: linear-gradient(90deg, #2563eb, #3b82f6);
+        color: white;
+        border: none;
+    }
+    .result-card {
+        background: #ffffff;
+        border: 1px solid #dbeafe;
+        border-left: 5px solid #2563eb;
+        border-radius: 14px;
+        padding: 1rem 1.1rem;
+        margin-top: 0.8rem;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+    }
+    .footer {
+        text-align: center;
+        color: #64748b;
+        font-size: 0.95rem;
+        margin-top: 1.8rem;
+        padding: 0.8rem 0;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    """
+    <div class="hero-card">
+        <h1>🤖 Agentic AI Assistant</h1>
+        <p>Ask one question and let the agent combine smart web search with live weather insights.</p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
+col1, col2 = st.columns(2)
+with col1:
+    st.markdown(
+        """
+        <div class="info-card">
+            <b>✨ What it can do</b><br>
+            Search the web for useful information and fetch current weather for a city in one flow.
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+with col2:
+    st.markdown(
+        """
+        <div class="info-card">
+            <b>💡 Example prompt</b><br>
+            “Find the capital of India and current weather there.”
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
 # ==========================================
 # SEARCH TOOL
@@ -123,8 +212,9 @@ agent_executor = AgentExecutor(
 # UI INPUT
 # ==========================================
 
+st.markdown("### Ask your agent")
 user_query = st.text_input(
-    "Enter your query:",
+    "",
     placeholder="Example: Find the capital of India and current weather"
 )
 
@@ -132,7 +222,7 @@ user_query = st.text_input(
 # RUN AGENT
 # ==========================================
 
-if st.button("Run Agent"):
+if st.button("Run Agent", use_container_width=True):
 
     if user_query:
 
@@ -144,8 +234,14 @@ if st.button("Run Agent"):
                 })
 
                 st.success("Response Generated")
-
-                st.markdown("## Final Response")
+                st.markdown(
+                    """
+                    <div class="result-card">
+                        <h3>Final Response</h3>
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
                 st.write(response["output"])
 
             except Exception as e:
@@ -153,3 +249,10 @@ if st.button("Run Agent"):
 
     else:
         st.warning("Please enter a query")
+
+st.markdown(
+    """
+    <div class="footer">Developed by Karthikeya</div>
+    """,
+    unsafe_allow_html=True,
+)
